@@ -1,0 +1,17 @@
+<h2>Send Message</h2>
+  <p>Athlete name: <input type="text" [(ngModel)]="newAthleteName" /></p>
+  <p>Sport: <input type="text" [(ngModel)]="newAthleteSport" /></p>
+  <p>Are they actively playing: <input type="checkbox" [(ngModel)]="newAthleteIsActive" /></p>
+  <div>
+    <button (click)="onCreateAthlete()">Create Athlete</button>
+  </div>
+
+  <h2>Athlete's List</h2>
+<div>
+  <ul>
+    <li *ngFor="let currentAthlete of athleteArray">
+      <span *ngIf="currentAthlete.isActive">* {{currentAthlete.name}} ({{currentAthlete.sport}}) is active</span>
+      <span *ngIf="!currentAthlete.isActive">* {{currentAthlete.name}} ({{currentAthlete.sport}}) is not active</span>
+    </li>
+  </ul>
+</div>
